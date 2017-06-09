@@ -20,7 +20,7 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 	public $post_args = array(
 		'hierarchical' => true,
 		'supports' => array( 'title', 'editor', 'author', 'thumbnail' ),
-		'has_archive' => true,
+		'has_archive' => false,
 		'rewrite' => array(
 			'slug' => 'underwriter',
 			'with_front' => false,
@@ -170,7 +170,7 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 	}
 	
 	/**
-	 * Allow PDF Attached Newsletters to be sorted by whether the PDF exists or not
+	 * Allow Website Attached Underwriters to be sorted by whether the Website exists or not
 	 * This technically also runs on the Frontend, but it isn't important. The condition should never be true anyway in normal use.
 	 * 
 	 * @param		object $query WP_Query
@@ -199,7 +199,7 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 	}
 	
 	/**
-	 * Show the PDF URL as the Permalink Sample if this Newsletter has one set
+	 * Show the Website URL as the Permalink Sample if this Underwriter has one set
 	 * 
 	 * @param		string  $return    Sample HTML Markup
 	 * @param		integer $post_id   Post ID
@@ -230,7 +230,7 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 	}
 	
 	/**
-	 * Replace the_permalink() calls on the Frontend with the PDF URL
+	 * Replace the_permalink() calls on the Frontend with the Website URL
 	 * 
 	 * @param		string $url The Post URL
 	 *                
@@ -255,7 +255,7 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 	}
 	
 	/**
-	 * Replace get_peramlink() calls on the Frontend with the PDF URL
+	 * Replace get_peramlink() calls on the Frontend with the Website URL
 	 * 
 	 * @param		string  $url       The Post URL
 	 * @param		object  $post      WP Post Object
@@ -283,14 +283,14 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 	}
 	
 	/**
-	 * Force a redirect to the PDF if one exists
+	 * Force a redirect to the Website if one exists
 	 * 
 	 * @param       string $template Path to Template File
 	 *                                                
 	 * @since       1.0.0
 	 * @return      string Modified Template File Path
  	 */
-	public function redirect_to_pdf( $template ) {
+	public function redirect_to_website( $template ) {
 		
 		global $wp_query;
 		global $post;
