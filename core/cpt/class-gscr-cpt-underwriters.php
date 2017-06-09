@@ -242,7 +242,7 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 		
 		if ( get_post_type() == $this->post_type ) {
 			
-			if ( $website_url = rbm_get_field( 'underwriter_website_url', $post_id ) ) {
+			if ( $website_url = rbm_get_field( 'underwriter_website_url', get_the_ID() ) ) {
 				
 				$url = $website_url;
 				
@@ -270,7 +270,7 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 		
 		if ( $post->post_type == $this->post_type ) {
 			
-			if ( $website_url = rbm_get_field( 'underwriter_website_url', $post_id ) ) {
+			if ( $website_url = rbm_get_field( 'underwriter_website_url', get_the_ID() ) ) {
 				
 				$url = $website_url;
 				
