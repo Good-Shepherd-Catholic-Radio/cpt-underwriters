@@ -67,6 +67,8 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 		
 		add_filter( 'template_include', array( $this, 'redirect_to_website' ) );
 		
+		add_action( 'init', array( $this, 'register_taxonomy' ) );
+		
 	}
 	
 	/**
@@ -307,6 +309,27 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 		
 		return $template;
 	
+	}
+	
+	/**
+	 * Underwriter Category Taxonomy
+	 * 
+	 * @access		public
+	 * @since		1.0.0
+	 * @return		void
+	 */
+	public function register_taxonomy() {
+		
+		register_taxonomy( $this->post_type . '-category', array( $this->post_type ), array(
+			'labels' => array(
+				'name' => sprintf( __( '%s Categories', 'gscr-cpt-underwriters' ), $this->label_singular ),
+				'singular_name' => sprintf( __( '%s Category', 'gscr-cpt-underwriters' ), $this->label_singular ),
+				'menu_name' => sprintf( __( '%s Categories', 'gscr-cpt-underwriters' ), $this->label_singular ),
+			),
+			'hierarchical' => true,
+			'show_admin_column' => true,
+		) );
+		
 	}
 	
 }
