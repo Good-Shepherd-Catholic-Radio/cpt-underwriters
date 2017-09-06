@@ -81,11 +81,11 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 	public function add_meta_boxes() {
 		
 		add_meta_box(
-			'underwriter-website-url',
+			'underwriter-meta',
 			sprintf( _x( '%s Meta', 'Metabox Title', 'gscr-cpt-underwriters' ), $this->label_singular ),
 			array( $this, 'metabox_content' ),
 			$this->post_type,
-			'side'
+			'normal'
 		);
 		
 	}
@@ -105,6 +105,22 @@ class CPT_GSCR_Underwriters extends RBM_CPT {
 			false,
 			array(
 				'description' => __( 'If a Website URL is placed here, this Underwriter will link to their Website directly.', 'gscr-cpt-underwriters' ),
+			)
+		);
+		
+		rbm_do_field_text(
+			'underwriter_phone',
+			_x( 'Underwriter Phone Number', 'Underwriter Phone Number Label', 'gscr-cpt-underwriters' ),
+			false,
+			array(
+			)
+		);
+		
+		rbm_do_field_textarea(
+			'underwriter_address',
+			_x( 'Underwriter Address', 'Underwriter Address Label', 'gscr-cpt-underwriters' ),
+			false,
+			array(
 			)
 		);
 		
