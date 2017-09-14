@@ -3,7 +3,7 @@
  * Plugin Name: CPT Underwriters
  * Plugin URI: https://github.com/Good-Shepherd-Catholic-Radio/cpt-underwriters
  * Description: Creates the "Underwriters" Custom Post Type
- * Version: 0.1.0
+ * Version: 1.0.0
  * Text Domain: gscr-cpt-underwriters
  * Author: Eric Defore
  * Author URI: http://realbigmarketing.com/
